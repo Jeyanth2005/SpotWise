@@ -189,5 +189,5 @@ Dr. K. Sathiya Priya: Department Placement Coordinator,
 Ms. J. Adlene Anusha: Project Guide,
 Panel Members: Ms. S K Abirami, Dr. V Santhi, Ms. J. Adlene Anusha.
 
-License
+License:
 This project is licensed under the MIT License. See the LICENSE file for details.
