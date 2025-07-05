@@ -1,46 +1,50 @@
 SpotWise - All-in-One Service Provider Platform
-Overview
+
+Overview:
 SpotWise is a location-based web platform designed to connect service seekers with local service providers (e.g., plumbers, electricians, carpenters, cleaners) within a 5 km radius. Developed as part of the AICTE Activity Point Programme by students of PSG College of Technology, SpotWise leverages modern web technologies to deliver a seamless, secure, and efficient user experience. The platform addresses inefficiencies in traditional service marketplaces by offering real-time geolocation, secure authentication, and instant notifications.
-Features
 
-5 km Radius Matching: Utilizes Google Maps API and MongoDB geospatial queries for precise, proximity-based service provider matching.
-JWT Authentication: Secure role-based access control (RBAC) for seekers and providers using JSON Web Tokens with 24-hour expiry.
-Real-Time Notifications: WebSocket-based alerts for instant updates on service requests, with fallback to HTTP polling.
-PIN Verification System: 6-digit PIN generation and validation for secure transaction completion.
-Responsive Design: Built with Bootstrap 5 for a mobile-first, cross-platform user interface.
-Service History & Analytics: User dashboards to track past requests, provider ratings, and admin analytics for system monitoring.
-Interactive Service Map: Dynamic map interface for creating and managing service requests with real-time location updates.
-Scalability: Handles 1,000+ concurrent users with MongoDB Atlas and Vercel deployment.
+Features:
 
-Tech Stack
-Frontend
+1) 5 km Radius Matching: Utilizes Google Maps API and MongoDB geospatial queries for precise, proximity-based service provider matching.
+2) JWT Authentication: Secure role-based access control (RBAC) for seekers and providers using JSON Web Tokens with 24-hour expiry.
+3) Real-Time Notifications: WebSocket-based alerts for instant updates on service requests, with fallback to HTTP polling.
+4) PIN Verification System: 6-digit PIN generation and validation for secure transaction completion.
+5) Responsive Design: Built with Bootstrap 5 for a mobile-first, cross-platform user interface.
+6) Service History & Analytics: User dashboards to track past requests, provider ratings, and admin analytics for system monitoring.
+7) Interactive Service Map: Dynamic map interface for creating and managing service requests with real-time location updates.
+8) Scalability: Handles 1,000+ concurrent users with MongoDB Atlas and Vercel deployment.
 
-HTML5, CSS3, JavaScript: Core web technologies for structure and interactivity.
-Bootstrap 5: Responsive UI framework for mobile, tablet, and desktop compatibility.
-Google Maps JavaScript API (v3.52): Geolocation, mapping, and Places API for location search and autocomplete.
-jQuery (3.4.1): DOM manipulation and AJAX requests.
-Font Awesome: Icons for enhanced UI.
-Custom CSS: Additional styling for map and request interfaces (map-styles.css).
+Tech Stack:
 
-Backend
+Frontend:
 
-Node.js (v16.x): Asynchronous server-side runtime.
-Express.js (v4.17.x): RESTful API routing and middleware.
-MongoDB (v5.0): NoSQL database with geospatial indexing (2dsphere).
-Mongoose ODM (v6.x): MongoDB object modeling.
-JSON Web Tokens (jsonwebtoken v8.5.x): Stateless authentication with HS256 algorithm.
-Bcryptjs: Password hashing for secure user authentication.
-Socket.IO: Real-time bidirectional communication.
-Object-Assign: Polyfill for Object.assign to ensure compatibility with older browsers.
+1) HTML5, CSS3, JavaScript: Core web technologies for structure and interactivity.
+2) Bootstrap 5: Responsive UI framework for mobile, tablet, and desktop compatibility.
+3) Google Maps JavaScript API (v3.52): Geolocation, mapping, and Places API for location search and autocomplete.
+4) jQuery (3.4.1): DOM manipulation and AJAX requests.
+5) Font Awesome: Icons for enhanced UI.
+6) Custom CSS: Additional styling for map and request interfaces (map-styles.css).
 
-Deployment
+Backend:
+
+1) Node.js (v16.x): Asynchronous server-side runtime.
+2) Express.js (v4.17.x): RESTful API routing and middleware.
+3) MongoDB (v5.0): NoSQL database with geospatial indexing (2dsphere).
+4) Mongoose ODM (v6.x): MongoDB object modeling.
+5) JSON Web Tokens (jsonwebtoken v8.5.x): Stateless authentication with HS256 algorithm.
+6) Bcryptjs: Password hashing for secure user authentication.
+7) Socket.IO: Real-time bidirectional communication.
+8) Object-Assign: Polyfill for Object.assign to ensure compatibility with older browsers.
+
+Deployment:
 
 MongoDB Atlas: Cloud-hosted database with M0 free tier.
 Vercel: Backend hosting with environment variable management.
 GitHub Pages: Frontend static site hosting.
 GitHub Actions: CI/CD pipeline for automated deployment.
 
-Project Structure
+Project Structure:
+
 SpotWise/
 ├── frontend/
 │   ├── public/
@@ -67,17 +71,19 @@ SpotWise/
 ├── package.json                 # Node.js dependencies and scripts
 └── vercel.json                  # Vercel deployment configuration
 
-Installation and Setup
-Prerequisites
+Installation and Setup:
 
-Node.js (v16.x or higher)
-MongoDB Atlas account
-Google Maps API key with Places library enabled
-Git
+Prerequisites:
 
-Steps
+Node.js (v16.x or higher),
+MongoDB Atlas account,
+Google Maps API key with Places library enabled,
+Git.
+
+Steps:
 
 Clone the Repository:
+
 git clone https://github.com/<your-username>/SpotWise.git
 cd SpotWise
 
@@ -114,7 +120,7 @@ Lilliadis:
 Backend: http://localhost:3000 (or Vercel URL)
 Frontend: Hosted URL (e.g., GitHub Pages)
 
-Usage
+Usage:
 
 Sign Up / Sign In:
 
@@ -148,7 +154,7 @@ Supports location search via Google Maps Places API and manual pin-drop.
 
 
 
-Development Timeline
+Development Timeline:
 
 Phase 1: Research and Foundation (3 weeks)
 Tech stack selection and competitor analysis.
@@ -167,7 +173,7 @@ MongoDB Atlas, Vercel, and GitHub Pages setup with CI/CD pipeline.
 
 
 
-Contributors
+Contributors:
 
 Abishek J,
 Dhanushkumar M,
@@ -175,13 +181,13 @@ Jeyanth V P,
 Jothiswarar S,
 Santhosh G.
 
-Acknowledgments
+Acknowledgments:
 
-Dr. V Santhi: Programme Coordinator
-Dr. G. Sudha Sadasivam: Head of the Department
-Dr. K. Sathiya Priya: Department Placement Coordinator
-Ms. J. Adlene Anusha: Project Guide
-Panel Members: Ms. S K Abirami, Dr. V Santhi, Ms. J. Adlene Anusha
+Dr. V Santhi: Programme Coordinator,
+Dr. G. Sudha Sadasivam: Head of the Department,
+Dr. K. Sathiya Priya: Department Placement Coordinator,
+Ms. J. Adlene Anusha: Project Guide,
+Panel Members: Ms. S K Abirami, Dr. V Santhi, Ms. J. Adlene Anusha.
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
