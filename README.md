@@ -1,5 +1,5 @@
-**SpotWise - All-in-One Service Provider Platform
-**
+SpotWise - All-in-One Service Provider Platform
+
 Overview:
 SpotWise is a location-based web platform designed to connect service seekers with local service providers (e.g., plumbers, electricians, carpenters, cleaners) within a 5 km radius. Developed as part of the AICTE Activity Point Programme by students of PSG College of Technology, SpotWise leverages modern web technologies to deliver a seamless, secure, and efficient user experience. The platform addresses inefficiencies in traditional service marketplaces by offering real-time geolocation, secure authentication, and instant notifications.
 
