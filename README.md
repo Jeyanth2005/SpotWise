@@ -1,4 +1,4 @@
-# SpotWise - All in One Service Provider
+# SpotWise - Urban Service Matching System
 
 SpotWise is an innovative, location-based web platform designed to seamlessly connect service seekers with local service providers within a defined 5km radius. It addresses the inefficiencies found in traditional service platforms, such as poor geolocation accuracy, insecure transactions, and scalability issues.
 
