@@ -1,193 +1,32 @@
-SpotWise - All-in-One Service Provider Platform
+# SpotWise - All in One Service Provider
 
-Overview:
-SpotWise is a location-based web platform designed to connect service seekers with local service providers (e.g., plumbers, electricians, carpenters, cleaners) within a 5 km radius. Developed as part of the AICTE Activity Point Programme by students of PSG College of Technology, SpotWise leverages modern web technologies to deliver a seamless, secure, and efficient user experience. The platform addresses inefficiencies in traditional service marketplaces by offering real-time geolocation, secure authentication, and instant notifications.
+[cite_start]SpotWise is an innovative, location-based web platform designed to seamlessly connect service seekers with local service providers within a defined 5km radius[cite: 63, 78]. [cite_start]It addresses the inefficiencies found in traditional service platforms, such as poor geolocation accuracy, insecure transactions, and scalability issues[cite: 66, 90].
 
-Features:
+## Project Overview
 
-1) 5 km Radius Matching: Utilizes Google Maps API and MongoDB geospatial queries for precise, proximity-based service provider matching.
-2) JWT Authentication: Secure role-based access control (RBAC) for seekers and providers using JSON Web Tokens with 24-hour expiry.
-3) Real-Time Notifications: WebSocket-based alerts for instant updates on service requests, with fallback to HTTP polling.
-4) PIN Verification System: 6-digit PIN generation and validation for secure transaction completion.
-5) Responsive Design: Built with Bootstrap 5 for a mobile-first, cross-platform user interface.
-6) Service History & Analytics: User dashboards to track past requests, provider ratings, and admin analytics for system monitoring.
-7) Interactive Service Map: Dynamic map interface for creating and managing service requests with real-time location updates.
-8) Scalability: Handles 1,000+ concurrent users with MongoDB Atlas and Vercel deployment.
+[cite_start]SpotWise's primary objective is to bridge the gap between service seekers and service providers like plumbers, electricians, and carpenters[cite: 78, 18, 71]. [cite_start]By focusing on hyper-local interactions, the platform ensures faster response times and higher service quality[cite: 67]. [cite_start]The platform is designed for scalability and can handle a growing user base without compromising performance[cite: 68].
 
-Tech Stack:
+## Key Features
 
-Frontend:
+* [cite_start]**5km Radius Matching**: The platform utilizes the Google Maps API for precise geolocation and MongoDB's geospatial indexing for efficient proximity-based searches, prioritizing providers closest to the seeker[cite: 64, 85, 86, 114, 115].
+* [cite_start]**JWT Authentication**: SpotWise integrates JSON Web Tokens (JWT) for secure, role-based access control (RBAC), with tokens configured to expire after 24 hours[cite: 65, 84, 116, 117, 122]. [cite_start]All API calls are secured via TLS 1.3 to prevent attacks[cite: 123, 214].
+* [cite_start]**Real-Time Alerts**: WebSockets are implemented to provide instant notifications to providers when a new request matches their skills and location[cite: 87, 127, 128]. [cite_start]A fallback to HTTP polling is in place if the WebSocket connection fails[cite: 132, 133].
+* [cite_start]**PIN-based Verification**: A unique 6-digit PIN is automatically generated when a provider accepts a request, which is securely stored with SHA-256 hashing[cite: 65, 135, 137]. [cite_start]This PIN is used to verify service completion and prevent fraud[cite: 95, 138, 139, 140, 141].
+* [cite_start]**Cross-Platform Responsiveness**: The user interface is developed using Bootstrap 5, guaranteeing a responsive design that adapts seamlessly to smartphones, tablets, and desktops[cite: 81, 145, 147].
+* [cite_start]**Service History & Analytics**: User dashboards allow seekers to view past requests and provider ratings, while providers can track completed jobs, earnings, and customer feedback[cite: 154, 155, 156].
 
-1) HTML5, CSS3, JavaScript: Core web technologies for structure and interactivity.
-2) Bootstrap 5: Responsive UI framework for mobile, tablet, and desktop compatibility.
-3) Google Maps JavaScript API (v3.52): Geolocation, mapping, and Places API for location search and autocomplete.
-4) jQuery (3.4.1): DOM manipulation and AJAX requests.
-5) Font Awesome: Icons for enhanced UI.
-6) Custom CSS: Additional styling for map and request interfaces (map-styles.css).
+## Technology Stack
 
-Backend:
+### Backend
+* [cite_start]**Framework**: Node.js (v16.x) with Express.js (v4.17.x)[cite: 64, 80, 166, 167].
+* [cite_start]**Database**: MongoDB (v5.0) with Mongoose ODM (v6.x) for efficient data management and native geospatial support[cite: 64, 80, 170].
+* [cite_start]**Authentication**: JSON Web Tokens (JWT) using the `jsonwebtoken` library (v8.5.x)[cite: 65, 172, 173, 194].
 
-1) Node.js (v16.x): Asynchronous server-side runtime.
-2) Express.js (v4.17.x): RESTful API routing and middleware.
-3) MongoDB (v5.0): NoSQL database with geospatial indexing (2dsphere).
-4) Mongoose ODM (v6.x): MongoDB object modeling.
-5) JSON Web Tokens (jsonwebtoken v8.5.x): Stateless authentication with HS256 algorithm.
-6) Bcryptjs: Password hashing for secure user authentication.
-7) Socket.IO: Real-time bidirectional communication.
-8) Object-Assign: Polyfill for Object.assign to ensure compatibility with older browsers.
+### Frontend
+* [cite_start]**Framework**: The front end uses HTML5 for structure and CSS3 with media queries for styling[cite: 206, 207].
+* [cite_start]**Geolocation**: Google Maps JavaScript API (v3.52) for geolocation services[cite: 64, 208].
 
-Deployment:
-
-MongoDB Atlas: Cloud-hosted database with M0 free tier.
-Vercel: Backend hosting with environment variable management.
-GitHub Pages: Frontend static site hosting.
-GitHub Actions: CI/CD pipeline for automated deployment.
-
-Project Structure:
-
-SpotWise/
-├── frontend/
-│   ├── public/
-│   │   ├── index.html           # Main landing page
-│   │   ├── service.html          # Services page
-│   │   ├── service-map.html      # Interactive service map interface
-│   │   ├── css/
-│   │   │   ├── bootstrap.css     # Bootstrap framework styles
-│   │   │   ├── style.css         # Custom styles
-│   │   │   └── map-styles.css    # Map-specific styles
-│   │   ├── js/
-│   │   │   ├── auth.js           # Authentication handling
-│   │   │   └── custom.js         # Custom client-side scripts
-│   │   └── images/               # Static assets (e.g., plumbing.jpeg, electrical.png)
-├── models/
-│   ├── UserModel.js              # User schema (seeker/provider roles, location)
-│   └── ServiceRequest.js         # Service request schema
-├── controllers/
-│   ├── authController.js         # Authentication routes (register, login, logout)
-│   └── serviceController.js      # Service request handling
-├── node_modules/
-│   └── object-assign/           # Polyfill for Object.assign
-├── index.js                     # Main server entry point
-├── package.json                 # Node.js dependencies and scripts
-└── vercel.json                  # Vercel deployment configuration
-
-Installation and Setup:
-
-Prerequisites:
-
-Node.js (v16.x or higher),
-MongoDB Atlas account,
-Google Maps API key with Places library enabled,
-Git.
-
-Steps:
-
-Clone the Repository:
-
-git clone https://github.com/<your-username>/SpotWise.git
-cd SpotWise
-
-
-Install Dependencies:
-npm install
-
-
-Set Up Environment Variables: Create a .env file in the root directory with the following:
-JWT_SECRET=your_jwt_secret_key
-DB_URI=your_mongodb_atlas_connection_string
-MAPS_API_KEY=your_google_maps_api_key
-
-
-Run the Backend:
-npm start
-
-
-Host the Frontend:
-
-Deploy static files in frontend/public/ to GitHub Pages or another static hosting service.
-
-Update service-map.html, index.html, and service.html with your Google Maps API key in the script tag:
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMapsCallback" async defer></script>
-
-
-
-
-Access the Application:
-
-
-Lilliadis:
-
-Backend: http://localhost:3000 (or Vercel URL)
-Frontend: Hosted URL (e.g., GitHub Pages)
-
-Usage:
-
-Sign Up / Sign In:
-
-Register as a service seeker or provider via the sign-up page (index.html or service.html).
-Log in with email and password to receive a JWT token.
-
-
-Service Request (Seekers):
-
-Access the Service Map (service-map.html) to create a request.
-Select a service category (e.g., plumbing), provide a description, contact number, and location.
-Receive real-time updates on provider acceptance and job status.
-
-
-Service Acceptance (Providers):
-
-View and accept requests within a 5 km radius on the Service Map.
-Complete jobs using a 6-digit PIN for verification.
-
-
-Profile and Service Management:
-
-Update availability status and service location via the profile page.
-View service history and ratings in the dashboard.
-
-
-Service Map:
-
-Interactive map interface to set service locations and view active requests.
-Supports location search via Google Maps Places API and manual pin-drop.
-
-
-
-Development Timeline:
-
-Phase 1: Research and Foundation (3 weeks)
-Tech stack selection and competitor analysis.
-
-
-Phase 2: Frontend Implementation (4 weeks)
-UI development, including service request forms and interactive map.
-
-
-Phase 3: Backend Development (7 weeks)
-JWT authentication, MongoDB schemas, and geospatial matching algorithm.
-
-
-Phase 4: Deployment (2 weeks)
-MongoDB Atlas, Vercel, and GitHub Pages setup with CI/CD pipeline.
-
-
-
-Contributors:
-
-Abishek J,
-Dhanushkumar M,
-Jeyanth V P,
-Jothiswarar S,
-Santhosh G.
-
-Acknowledgments:
-
-Dr. V Santhi: Programme Coordinator,
-Dr. G. Sudha Sadasivam: Head of the Department,
-Dr. K. Sathiya Priya: Department Placement Coordinator,
-Ms. J. Adlene Anusha: Project Guide,
-Panel Members: Ms. S K Abirami, Dr. V Santhi, Ms. J. Adlene Anusha.
-
-License:
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Deployment
+* [cite_start]**Backend**: The server is deployed on Vercel[cite: 200].
+* [cite_start]**Database**: The primary datastore is hosted on MongoDB Atlas[cite: 200].
+* [cite_start]**Frontend**: The frontend is hosted on GitHub Pages[cite: 201].
